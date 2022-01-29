@@ -1,0 +1,28 @@
+@import "../../global.scss";
+
+.btn {
+  background-color: $btn-color;
+  outline: none;
+  border: none;
+  height: 100px;
+  font-size: 70px;
+  line-height: 1;
+  font-weight: bold;
+  border-radius: 10px;
+  color: $primary-color;
+  box-shadow: 0 10px 0 $shadow-btn;
+  cursor: pointer;
+}
+
+.circle {
+  color: $secondary-color;
+}
+.crosswin {
+  background: $primary-color;
+  color: $btn-color;
+}
+
+.circlewin {
+  background: $secondary-color;
+  color: $btn-color;
+}

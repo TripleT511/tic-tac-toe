@@ -1,0 +1,8 @@
+@import "../../global.scss";
+
+.Board {
+  @include grid;
+  @media screen and (max-width: 576px) {
+    grid-gap: 20px;
+  }
+}

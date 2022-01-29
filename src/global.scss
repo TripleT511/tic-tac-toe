@@ -1,0 +1,23 @@
+$bg-color: #192a32;
+$btn-color: #1f3540;
+$shadow-btn: #102129;
+$primary-color: #2cc6c0;
+$secondary-color: #f3b136;
+$grey-color: #a8bec9;
+@mixin flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexSpace() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin grid() {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+}

@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+@import "./global.scss";
+
+body {
+  background-color: $bg-color;
+  min-height: 100vh;
+  @include flexCenter;
+}
+
+.App {
+  width: 500px;
+  margin: auto;
+  padding: 50px;
+  @media screen and (max-width: 576px) {
+    width: 380px;
+    padding: 20px;
+  }
+}
+
+.header {
+  @include flexSpace;
+  margin-bottom: 20px;
+  &__left {
+    font-size: 45px;
+    font-weight: bold;
+    span:nth-child(1) {
+      color: $primary-color;
+      margin-right: 5px;
+    }
+
+    span:nth-child(2) {
+      color: $secondary-color;
+    }
+  }
+  &__center {
+    width: 120px;
+    height: 50px;
+    margin-left: -10px;
+    font-size: 25px;
+    line-height: 0;
+    background-color: $btn-color;
+    box-shadow: 0 10px 0 $shadow-btn;
+    color: #94aab5;
+    border-radius: 10px;
+    @include flexCenter;
+    span {
+      display: inline-block;
+      margin-left: 5px;
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+  &__right {
+    background-color: $grey-color;
+    border-radius: 10px;
+    color: $bg-color;
+    font-size: 20px;
+    line-height: 0;
+    height: 50px;
+    width: 60px;
+    box-shadow: 0 10px 0 #6c8997;
+    cursor: pointer;
+    @include flexCenter;
+  }
+}
+
+.footer {
+  margin-top: 40px;
+  @include grid;
+  @media screen and (max-width: 576px) {
+    grid-gap: 20px;
+    margin-top: 30px;
+  }
+  &__center,
+  &__left,
+  &__right {
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 20px 0;
+    @include flexCenter;
+    p {
+      font-size: 18px;
+      font-weight: normal;
+      color: $bg-color;
+      margin-bottom: 5px;
+    }
+    strong {
+      line-height: 1;
+      font-size: 30px;
+    }
+  }
+
+  &__left {
+    background-color: $primary-color;
+  }
+
+  &__center {
+    background-color: $grey-color;
+  }
+  &__right {
+    background-color: $secondary-color;
+  }
+}

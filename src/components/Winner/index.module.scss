@@ -1,0 +1,83 @@
+@import "../../global.scss";
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+  opacity: 0.5;
+  z-index: 10;
+}
+
+.winner {
+  position: fixed;
+  @include flexCenter;
+  flex-direction: column;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 40px 0;
+  background: $btn-color;
+  z-index: 9999;
+  &__top {
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  &__center {
+    @include flexCenter;
+    font-weight: bold;
+    color: $secondary-color;
+    strong {
+      font-size: 40px;
+      margin-right: 10px;
+    }
+    p {
+      font-size: 30px;
+    }
+  }
+
+  .crosswin {
+    color: $primary-color;
+  }
+
+  &__bottom {
+    @include flexSpace;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    gap: 20px;
+    .btn__quit {
+      background-color: $grey-color;
+      border-radius: 10px;
+      color: $bg-color;
+      font-size: 20px;
+      line-height: 0;
+      font-weight: bold;
+      height: 50px;
+      width: 80px;
+      box-shadow: 0 10px 0 #6c8997;
+      cursor: pointer;
+      @include flexCenter;
+    }
+
+    .btn__next {
+      background-color: $secondary-color;
+      border-radius: 10px;
+      color: $bg-color;
+      font-size: 20px;
+      line-height: 0;
+      font-weight: bold;
+      height: 50px;
+      width: 170px;
+      box-shadow: 0 10px 0 #e89803;
+      cursor: pointer;
+      @include flexCenter;
+    }
+  }
+}
