@@ -9,6 +9,7 @@
 body {
   background-color: $bg-color;
   min-height: 100vh;
+  overflow: hidden;
   @include flexCenter;
 }
 
@@ -17,8 +18,8 @@ body {
   margin: auto;
   padding: 50px;
   @media screen and (max-width: 576px) {
-    width: 380px;
-    padding: 20px;
+    max-width: 340px;
+    padding: 0;
   }
 }
 

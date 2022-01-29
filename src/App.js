@@ -1,7 +1,7 @@
 import Board from "./components/Board";
 import clsx from "clsx";
 import styles from "./index.module.scss";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Square from "./components/Square";
 import Winner from "./components/Winner";
 
@@ -18,6 +18,9 @@ function App() {
     count: 0,
   });
 
+  let preValue = useRef();
+  preValue.current = history[history.length - 1];
+
   const handleClick = (item, index) => {
     if (winner === "") {
       const newArr = values;
@@ -28,7 +31,18 @@ function App() {
       if (newArr[index] == null) {
         setIsNext(!isNext);
         isNext ? (newArr[index] = "X") : (newArr[index] = "O");
-        setHistory((prev) => [...prev, [...newArr]]);
+        console.log("Values", values);
+        console.log("Lịch sử", history);
+        if (
+          history.length > 0 &&
+          history[history.length - 1].toString() === values.toString()
+        ) {
+          console.log("Prev", preValue.current);
+          setHistory([history[0]]);
+        } else {
+          setHistory((prev) => [...prev, [...newArr]]);
+        }
+
         setValues(newArr);
 
         const isWin = calculatorWinner(newArr);
@@ -100,17 +114,12 @@ function App() {
     setValues(Array(9).fill(null));
     setLstWin([]);
   };
-  console.log("Values", values);
-  console.log("Lịch sử", history);
-  console.log("Số bước đi", point.count);
   const unDo = () => {
     const lenHistory = history.length;
-    console.log(lenHistory);
     if (lenHistory > 1) {
       const prevHis = history.slice(0, lenHistory - 1);
       setValues(prevHis[prevHis.length - 1]);
       setHistory([...prevHis]);
-      console.log("Lịch sử cũ", history);
 
       setIsNext(!isNext);
       setPoint((prev) => ({
